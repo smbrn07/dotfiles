@@ -24,5 +24,5 @@ makepkg -si
 ```
 
 ```
-yay -S grimblast nwg-lock rofi-wayland apple_cursor cliphist
+yay -S grimblast nwg-look rofi-wayland apple_cursor cliphist wlogout
 ```
