@@ -1,0 +1,12 @@
+{
+	"bootstrapped": true,
+	"installed_packages":
+	[
+		"BracketHighlighter",
+		"Package Control",
+		"Theme - Monokai Pro",
+	],
+	"in_process_packages":
+	[
+	],
+}
