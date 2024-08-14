@@ -1,0 +1,201 @@
+{
+	"spacing": 0,
+	"layer": "top",
+	"margin-top": 5,
+	"margin-left": 10,
+	"margin-right": 10,
+	"modules-left": [
+		"hyprland/workspaces",
+		"hyprland/window"
+	],
+	"modules-center": [
+		"custom/spotify",
+		"custom/recorder",
+	],
+	"modules-right": [
+		"cpu",
+		"custom/sep",
+		"memory",
+		"custom/sep",
+		"pulseaudio",
+		"custom/sep",
+		"clock",
+		"custom/sep",
+		"tray",
+		"custom/sep",
+		"custom/session",
+	],
+	"custom/sep": {
+		"format": "|",
+	},
+	"custom/space": {
+		"format": "     ",
+	},
+	"hyprland/window": {
+		"format": "  {}",
+		"max-length": 50,
+		"separate-outputs": true,
+	},
+	"idle_inhibitor": {
+		"format": "{icon}",
+		"format-icons": {
+			"activated": " ",
+			"deactivated": " ",
+		},
+	},
+	"custom/recorder": {
+		"format": "‎⭕‎",
+		"return-type": "json",
+		"interval": 1,
+		"exec": "echo '{\"class\": \"recording\"}'",
+		"exec-if": "pgrep wf-recorder",
+		"tooltip": false,
+		"on-click": "killall -s SIGINT wf-recorder",
+	},
+	"custom/notification": {
+		"tooltip": true,
+		"format": " {icon} ",
+		"format-icons": {
+			"notification": " ",
+			"none": " ",
+			"dnd-notification": " ",
+			"dnd-none": " ",
+		},
+		"return-type": "json",
+		"exec-if": "which swaync-client",
+		"exec": "swaync-client -swb",
+		"on-click": "swaync-client -t -sw",
+		"on-click-right": "swaync-client -d -sw",
+		"escape": true,
+	},
+	"custom/session": {
+		"format": "{icon}",
+		"format-icons": {
+			"default": "💀  ",
+		},
+		"toolip": true,
+		"on-click": "wlogout -p layer-shell",
+	},
+	"hyprland/workspaces": {
+		"disable-scroll": true,
+		"all-outputs": true,
+		"on-click": "activate",
+		"format": "{icon}",
+		"format-icons": {
+			"1": "I",
+			"2": "II",
+			"3": "III",
+			"4": "IV",
+			"5": "V",
+			"6": "VI",
+			"7": "VII",
+			"8": "VIII",
+			"9": "IX",
+			"urgent": " ",
+		},
+	},
+	"tray": {
+		"spacing": 10,
+	},
+	"clock": {
+		"format": "{:%I:%M %p}",
+		"interval": 60,
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+	},
+	"day": {
+		"format": "  {  %d/%m/%Y } ",
+		"interval": 60,
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+	},
+	"custom/bruh": {
+		"interval": 60,
+		"format": "{:  %A %d %b}",
+	},
+	"cpu": {
+		"format": " {avg_frequency}GHz",
+		"interval": 5,
+		"tooltip": false,
+	},
+	"memory": {
+    	"interval": 5,
+    	"format": " {used:0.1f}Gb"
+	},
+	"custom/power_profile": {
+		"exec": "sleep 0.3 && /home/adharsh/.scripts/powerprofilecycle.sh -m",
+		"interval": 1,
+		"on-click": "/home/adharsh/.scripts/powerprofilecycle.sh",
+		"exec-on-event": true,
+	},
+	"network": {
+		"format-wifi": "  {essid}",
+		"format-ethernet": "  VNPT",
+		"format-disconnected": " ",
+		"tooltip-format-wifi": " {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\n⬆️ {bandwidthUpBits} ⬇️ {bandwidthDownBits}",
+		"tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n⬆️ {bandwidthUpBits} ⬇️ {bandwidthDownBits}",
+		"format-linked": "{ifname} (No IP) ",
+		"on-click-right": "nm-connection-editor",
+	},
+	"pulseaudio": {
+		"format": "{volume}% {icon} {format_source}",
+		"format-bluetooth": "{volume}%  {format_source}",
+		"format-bluetooth-muted": "   {format_source}",
+		"format-muted": " {format_source}",
+		"format-source": "",
+		"format-source-muted": "",
+		"format-icons": {
+			"headphone": "",
+			"hands-free": "",
+			"headset": "",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": [
+				"",
+				"",
+				""
+			],
+		},
+		"on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+		"middle-click": "pavucontrol",
+	},
+	"custom/media": {
+		"format": "{icon} {}",
+		"return-type": "json",
+		"max-length": 40,
+		"format-icons": {
+			"spotify": " ",
+			"default": "🎜 ",
+		},
+		"escape": true,
+	},
+	"custom/spotify": {
+    "exec": "~/.config/waybar/custom/mediaplayer.py --player spotify",
+    "format": "{}  ",
+    "return-type": "json",
+    "on-click": "playerctl play-pause",
+    "on-scroll-up": "playerctl next",
+    "on-scroll-down": "playerctl previous"
+	},
+	"cava": {
+        "cava_config": "~/.config/cava/config",
+        "framerate": 30,
+        "autosens": 1,
+        "sensitivity": 100,
+        "bars": 14,
+        "lower_cutoff_freq": 50,
+        "higher_cutoff_freq": 10000,
+        "method": "pulse",
+        "source": "auto",
+        "stereo": true,
+        "reverse": false,
+        "bar_delimiter": 0,
+        "monstercat": false,
+        "waves": false,
+        "noise_reduction": 0.77,
+        "input_delay": 2,
+        "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+        "actions": {
+                   "on-click-right": "mode"
+                   }
+    },
+}
