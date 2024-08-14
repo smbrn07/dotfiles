@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+icon_theme_path="/home/$USER/.local/share/icons/Gruvbox-Material-Dark-OneColored"
+
+tag="string:x-dunst-stack-tag:battery"
+icon="$icon_theme_path/16x16/panel/battery-010.svg"
+
+dunstify -h $tag \
+	-u critical \
+	-i "$icon" \
+	-t 30000 \
+	"Warning" \
+	"Battery is getting low!"
