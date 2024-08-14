@@ -6,7 +6,7 @@
 
 ## Requirements
 1. Arch Linux Base Install
-2. yay****
+2. yay
 
 ## Pacman
 
@@ -15,6 +15,13 @@ sudo pacman -Syu tmux neovim neofetch swaync waybar xdg-user-dirs grim slurp wl-
 ```
 
 ## Yay
+
+```
+sudo pacman -S base-devel git
+git clone https://aur.archlinux.org/yay
+cd yay
+makepkg -si
+```
 
 ```
 yay -S grimblast nwg-lock rofi-wayland apple_cursor
