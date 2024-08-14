@@ -11,7 +11,7 @@
 ## Pacman
 
 ```
-sudo pacman -Syu tmux neovim neofetch swaync waybar xdg-user-dirs grim slurp wl-clipboard wtype pavucontrol jq qt5-wayland qt6-wayland qt5ct qt6ct
+sudo pacman -Syu tmux neovim neofetch swaync waybar xdg-user-dirs grim slurp wl-clipboard wtype pavucontrol jq qt5-wayland qt6-wayland qt5ct qt6ct rofimoji
 ```
 
 ## Yay
@@ -24,5 +24,5 @@ makepkg -si
 ```
 
 ```
-yay -S grimblast nwg-lock rofi-wayland apple_cursor
+yay -S grimblast nwg-lock rofi-wayland apple_cursor cliphist
 ```
