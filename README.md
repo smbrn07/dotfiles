@@ -1,5 +1,5 @@
 # Hyprland on Arch linux
-![Desktop]([https://user-images.githubusercontent.com/12150276/75177190-91d4ab00-572d-11ea-80bd-c5e28c7b17ad.gif](https://github.com/smbrn07/dotfiles/blob/main/pic/desktop.png?raw=true))
+![Desktop](https://github.com/smbrn07/dotfiles/blob/main/pic/desktop.png?raw=true)
 
 # CAUTION: Please READ the Hyprland wiki FIRST. DO NOT blindly copy/paste 😏.
 
