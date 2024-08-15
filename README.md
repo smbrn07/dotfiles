@@ -2,8 +2,6 @@
 
 # CAUTION: Please READ the Hyprland wiki FIRST. DO NOT blindly copy/paste 😏.
 
-# Hyprland is now on Arch repository!
-
 # Requirements
 1. Arch Linux Base Install
 2. yay
