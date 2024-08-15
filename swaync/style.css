@@ -5,7 +5,6 @@
 
 @define-color cc-bg rgba(42, 42, 42, 0.4);
 
-@define-color noti-border-color rgba(45, 42, 46, 0.8);
 @define-color noti-bg rgba(45, 42, 46, 0.4);
 @define-color noti-bg-hover rgba(45, 42, 46, 0.6);
 @define-color noti-bg-focus rgba(45, 42, 46, 0.8);
@@ -99,15 +98,14 @@
   padding: 4px;
   margin: 0;
   box-shadow: none;
-  background: @noti-bg;
-  border: 1px solid @noti-border-color;
+  background: transparent;
   color: white;
 }
 
 .notification-default-action:hover,
 .notification-action:hover {
   -gtk-icon-effect: none;
-  background: @noti-bg-hover;
+  background: transparent;
 }
 
 .notification-default-action {
@@ -131,18 +129,19 @@
   border-bottom-left-radius: 10px;
 }
 
-.notification-action:last-child {
+/*.notification-action:last-child {
   border-bottom-right-radius: 10px;
   border-right: 1px solid @noti-border-color;
 }
+*/
 
 .image {
 }
 
 .body-image {
   margin-top: 6px;
-  background-color: white;
-  border-radius: 12px;
+  background-color: transparent;
+/*  border-radius: 12px;*/
 }
 
 .summary {
@@ -179,20 +178,18 @@
 .control-center-clear-all {
   color: white;
   text-shadow: none;
-  background: @noti-bg;
-  border: 1px solid @noti-border-color;
+  background: transparent;
   box-shadow: none;
   border-radius: 12px;
 }
 
 .control-center-clear-all:hover {
-  background: @noti-bg-hover;
+  background: transparent;
 }
 
 .control-center-dnd {
   border-radius: 12px;
   background: @noti-bg;
-  border: 1px solid @noti-border-color;
   box-shadow: none;
 }
 
@@ -201,7 +198,7 @@
 }
 
 .control-center-dnd slider {
-  background: @noti-bg-hover;
+  background: transparent;
   border-radius: 12px;
 }
 
@@ -239,12 +236,11 @@
   color: white;
   text-shadow: none;
   background: @noti-bg;
-  border: 1px solid @noti-border-color;
   box-shadow: none;
   border-radius: 12px;
 }
 .widget-title > button:hover {
-  background: @noti-bg-hover;
+  background: transparent;
 }
 
 /* DND widget */
@@ -256,14 +252,13 @@
   font-size: initial;
   border-radius: 12px;
   background: @noti-bg;
-  border: 1px solid @noti-border-color;
   box-shadow: none;
 }
 .widget-dnd > switch:checked {
   background: @bg-selected;
 }
 .widget-dnd > switch slider {
-  background: @noti-bg-hover;
+  background: transparent;
   border-radius: 12px;
 }
 
