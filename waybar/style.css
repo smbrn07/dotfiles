@@ -1,17 +1,16 @@
 * {
-	/* `otf-font-awesome` is required to be installed for icons */
 	border: none;
 	font-family:
-		FontAwesome,
-		Liga SFMono Nerd Font;
+		Liga SF Mono Nerd Font,
+      FontAwesome;
 	font-size: 15px;
-	border-radius: 20px;
+	border-radius: 8px;
 }
 
 window {}
 
 window#waybar {
-	background: rgba(8, 8, 8, 0.45);
+	background: rgba(8,8,8,0.45);
 	border-radius: 8px;
 	transition-property: background-color;
 	transition-duration: 0.5s;
@@ -23,25 +22,25 @@ window#waybar {
 	/* background-color: rgba(8,8,8,0.85); */
 	background: transparent;
 	margin: 0 -12px 0 0;
-	border-radius: 20px;
+	border-radius: 8px;
 }
 
 .modules-center {
 	background: transparent;
 	margin: 0 0 0 0;
-	border-radius: 20px;
+	border-radius: 8px;
 }
 
 .modules-left {
 	background: transparent;
 	margin: 0 0 0 -12px;
-	border-radius: 20px;
+	border-radius: 8px;
 }
 
 tooltip {
-	background: #323437;
+	background: rgba(8,8,8,0.45);
 	color: #cdd6f4;
-	border-radius: 12px;
+	border-radius: 8px;
 }
 
 #workspaces {
@@ -49,7 +48,7 @@ tooltip {
 }
 
 #workspaces button {
-	padding: 1px 5px;
+	/* padding: 1px 5px; */
 	background: transparent;
 	color: #4c566a;
 }
@@ -69,7 +68,7 @@ tooltip {
 #workspaces button.urgent {
 	color: #11111b;
 	background: #fab387;
-	border-radius: 10px;
+	border-radius: 8px;
 }
 
 #custom-sep {
@@ -91,23 +90,23 @@ tooltip {
 #clock {
 	margin: 2px 0 0 0;
 	padding: 2px;
-	border-radius: 10px;
+	border-radius: 8px;
 	font-family: Liga SFMono Nerd Font;
-	color: #e9e3d8;
+	color: #CAD3F5;
 }
 
-#cava,
-#cpu {
-	color: #e9e3d8;
-}
-#memory {
-	color: #e9e3d8;
-}
-#temperature,
 #network,
-#pulseaudio {
-	color: #e9e3d8;
+#pulseaudio,
+#cpu, 
+#memory {
+	color: #CAD3F5;
 }
+
+#custom-pacman-update {
+   color: #8BD5CA;
+   /* margin: 5px 10px 5px 0px; */
+}
+
 #tray,
 #mode,
 #custom-power,
@@ -144,5 +143,4 @@ tooltip {
     background-color: #ffd866;
     color: black;
     border-radius: 8px;
-    font-family: Liga SFMono Nerd Font;
 }

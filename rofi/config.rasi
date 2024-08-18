@@ -1,131 +1,133 @@
-// vim: fdm=marker
+/*Dracula theme based on the Purple official rofi theme*/
 
 configuration {
-  modes: "window,drun,run,ssh";
-  font: "JetBrainsMono NF 18";
-  drun-display-format: "{name}";
+    show-icons:      true;
+    display-drun:    "";
+    disable-history: false;
 }
 
 * {
-  // general
-  bg: #282828;
-  bgt: #28282895;
-  t: transparent;
-  fg: #d4be98;
-
-  selected-bg: @fg;
-  selected-fg: @bg;
-
-  // for windows
-  active: #a9b665;
-  urgent: #fb4934;
+    font: "Jetbrains Mono 12";
+    foreground: #f8f8f2;
+    background-color: #282a36;
+    active-background: #6272a4;
+    urgent-background: #ff5555;
+    urgent-foreground: #282a36;
+    selected-background: @active-background;
+    selected-urgent-background: @urgent-background;
+    selected-active-background: @active-background;
+    separatorcolor: @active-background;
+    bordercolor: @active-background;
 }
 
-window {
-  fullscreen: true;
-  padding: 35% 30%;       // you might want to ajust these to resize rofi.
-  transparency: "real";
-  background-color: @bgt;
-  border-color: @t;
+#window {
+    background-color: @background-color;
+    border:           3;
+    border-radius:    6;
+    border-color:     @bordercolor;
+    padding:          15;
 }
-
-listview {
-  border: 0 0 0 0;
-  padding: 23 0 0;
-  scrollbar: true;
-}
-
-scrollbar {
-    width:        4px;
-    border:       0;
-    handle-color: @fg;
-    handle-width: 8px;
-    padding:      0 5;
-}
-
-entry {
-    placeholder: "";
-}
-
-// less interesting stuff {{{
-
-// using elements from:
-// https://github.com/bardisty/gruvbox-rofi/blob/master/gruvbox-common.rasi
-
-textbox {
-    text-color: @fg;
-}
-
-element {
+#mainbox {
     border:  0;
-    padding: 2px;
+    padding: 0;
 }
-element.normal.normal {
-    background-color: @t;
-    text-color:       @fg;
+#message {
+    border:       0px;
+    border-color: @separatorcolor;
+    padding:      1px;
 }
-element.normal.urgent {
-    background-color: @t;
-    text-color:       @urgent;
+#textbox {
+    text-color: @foreground;
 }
-element.normal.active {
-    background-color: @t;
-    text-color:       @active;
+#listview {
+    fixed-height: 0;
+    border:       0px;
+    border-color: @bordercolor;
+    spacing:      2px ;
+    scrollbar:    false;
+    padding:      2px 0px 0px ;
 }
-element.selected.normal {
-    background-color: @selected-bg;
-    text-color:       @selected-fg;
+#element {
+    border:  0;
+    padding: 3px ;
 }
-element.selected.urgent {
-    background-color: @selected-bg;
-    text-color:       @urgent;
+#element.normal.normal {
+    background-color: @background-color;
+    text-color:       @foreground;
 }
-element.selected.active {
-    background-color: @selected-bg;
-    text-color:       @selected-fg;
+#element.normal.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
 }
-element.alternate.normal {
-    background-color: @t;
-    text-color:       @fg;
+#element.normal.active {
+    background-color: @active-background;
+    text-color:       @foreground;
 }
-element.alternate.urgent {
-    background-color: @t;
-    text-color:       @urgent;
+#element.selected.normal {
+    background-color: @selected-background;
+    text-color:       @foreground;
 }
-element.alternate.active {
-    background-color: @t;
-    text-color:       @active;
+#element.selected.urgent {
+    background-color: @selected-urgent-background;
+    text-color:       @foreground;
 }
-
-sidebar {
-    border:       2px 0 0;
-    border-color: @fg;
+#element.selected.active {
+    background-color: @selected-active-background;
+    text-color:       @foreground;
 }
-
-inputbar {
+#element.alternate.normal {
+    background-color: @background-color;
+    text-color:       @foreground;
+}
+#element.alternate.urgent {
+    background-color: @urgent-background;
+    text-color:       @foreground;
+}
+#element.alternate.active {
+    background-color: @active-background;
+    text-color:       @foreground;
+}
+#scrollbar {
+    width:        2px ;
+    border:       0;
+    handle-width: 8px ;
+    padding:      0;
+}
+#sidebar {
+    border:       2px dash 0px 0px ;
+    border-color: @separatorcolor;
+}
+#button.selected {
+    background-color: @selected-background;
+    text-color:       @foreground;
+}
+#inputbar {
     spacing:    0;
-    text-color: @fg;
-    padding:    2px;
-    children:   [ prompt, textbox-prompt-sep, entry, case-indicator ];
+    text-color: @foreground;
+    padding:    1px ;
 }
-
-case-indicator,
-entry,
-prompt,
-button {
+#case-indicator {
     spacing:    0;
-    text-color: @fg;
+    text-color: @foreground;
 }
-
-button.selected {
-    background-color: @bg;
-    text-color:       @fg;
+#entry {
+    spacing:    0;
+    text-color: @foreground;
 }
-
-textbox-prompt-sep {
+#prompt {
+    spacing:    0;
+    text-color: @foreground;
+}
+#inputbar {
+    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+#textbox-prompt-colon {
     expand:     false;
-    str:        ":";
-    text-color: @fg;
-    margin:     0 0.3em 0 0;
+    str:        ">";
+    margin:     0px 0.3em 0em 0em ;
+    text-color: @foreground;
 }
-// }}}
+element-text, element-icon {
+    background-color: inherit;
+    text-color: inherit;
+}

@@ -1,6 +1,7 @@
 {
-"cmd" : ["g++ -std=c++17 $file_name -o run && timeout 4s ./run<test.in>test.out"], 
-"selector" : "source.c++",
-"shell": true,
-"working_dir" : "$file_path"
+	"cmd" : ["g++ -std=c++17 ${file_path}/${file_name} -o .build/run && timeout 4s ./.build/run<.build/test.in>.build/test.out"], 
+	"shell": true,
+	"file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
+	"selector" : "source.c++",
+	"working_dir" : "$folder"
 }

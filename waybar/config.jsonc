@@ -2,15 +2,15 @@
 	"spacing": 0,
 	"layer": "top",
 	"margin-top": 5,
-	"margin-left": 10,
-	"margin-right": 10,
+	"margin-left": 5,
+	"margin-right": 5,
 	"modules-left": [
 		"hyprland/workspaces",
 		"hyprland/window"
 	],
 	"modules-center": [
 		"custom/spotify",
-		"custom/recorder",
+		"custom/recorder"
 	],
 	"modules-right": [
 		"cpu",
@@ -18,30 +18,33 @@
 		"memory",
 		"custom/sep",
 		"pulseaudio",
+      "custom/sep",
+      "network",
 		"custom/sep",
 		"clock",
 		"custom/sep",
 		"tray",
 		"custom/sep",
-		"custom/session",
+		"custom/session"
 	],
 	"custom/sep": {
 		"format": "|",
+      "tooltip": false
 	},
 	"custom/space": {
-		"format": "     ",
+		"format": "     "
 	},
 	"hyprland/window": {
 		"format": "  {}",
 		"max-length": 50,
-		"separate-outputs": true,
+		"separate-outputs": true
 	},
 	"idle_inhibitor": {
 		"format": "{icon}",
 		"format-icons": {
 			"activated": " ",
-			"deactivated": " ",
-		},
+			"deactivated": " "
+		}
 	},
 	"custom/recorder": {
 		"format": "⭕",
@@ -50,7 +53,7 @@
 		"exec": "echo '{\"class\": \"recording\"}'",
 		"exec-if": "pgrep wf-recorder",
 		"tooltip": false,
-		"on-click": "killall -s SIGINT wf-recorder",
+		"on-click": "killall -s SIGINT wf-recorder"
 	},
 	"custom/notification": {
 		"tooltip": true,
@@ -59,22 +62,21 @@
 			"notification": "",
 			"none": "",
 			"dnd-notification": "",
-			"dnd-none": "",
+			"dnd-none": ""
 		},
 		"return-type": "json",
-		"exec-if": "which swaync-client",
-		"exec": "swaync-client -swb",
+		"exec-if": "which swaync-client", "exec": "swaync-client -swb",
 		"on-click": "swaync-client -t -sw",
 		"on-click-right": "swaync-client -d -sw",
-		"escape": true,
+		"escape": true
 	},
 	"custom/session": {
-		"format": "{icon}",
+		"format": "{icon}  ",
 		"format-icons": {
-			"default": "💀  ",
+			"default": "💀"
 		},
-		"toolip": true,
-		"on-click": "wlogout -p layer-shell",
+		"toolip": false,
+		"on-click": "wlogout -p layer-shell"
 	},
 	"hyprland/workspaces": {
 		"disable-scroll": true,
@@ -91,61 +93,52 @@
 			"7": "VII",
 			"8": "VIII",
 			"9": "IX",
-			"urgent": " ",
-		},
+			"urgent": "!"
+		}
 	},
 	"tray": {
-		"spacing": 10,
+		"spacing": 10
 	},
 	"clock": {
-		"format": "{:%I:%M %p}",
+		"format": "{:%a %H:%M}",
 		"interval": 60,
-		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-	},
-	"day": {
-		"format": "  {  %d/%m/%Y } ",
-		"interval": 60,
-		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-	},
-	"custom/bruh": {
-		"interval": 60,
-		"format": "{:  %A %d %b}",
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
 	},
 	"cpu": {
-		"format": " {avg_frequency}GHz",
+		"format": " {usage}%",
 		"interval": 5,
-		"tooltip": false,
+		"tooltip": false
 	},
 	"memory": {
     	"interval": 5,
-    	"format": " {used:0.1f}Gb"
+      "format": " {used:0.1f}G",
+      "tooltip": false
 	},
 	"custom/power_profile": {
 		"exec": "sleep 0.3 && /home/adharsh/.scripts/powerprofilecycle.sh -m",
 		"interval": 1,
 		"on-click": "/home/adharsh/.scripts/powerprofilecycle.sh",
-		"exec-on-event": true,
+		"exec-on-event": true
 	},
 	"network": {
 		"format-wifi": "  {essid}",
-		"format-ethernet": "  VNPT",
-		"format-disconnected": " ",
+		"format-ethernet": "󰈀 wired",
+		"format-disconnected": " disconnected",
 		"tooltip-format-wifi": " {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\n⬆️ {bandwidthUpBits} ⬇️ {bandwidthDownBits}",
-		"tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n⬆️ {bandwidthUpBits} ⬇️ {bandwidthDownBits}",
+		"tooltip-format-ethernet": "󰈀 {ifname}\nIP: {ipaddr}\n⬆️ {bandwidthUpBits} ⬇️ {bandwidthDownBits}",
 		"format-linked": "{ifname} (No IP) ",
-		"on-click-right": "nm-connection-editor",
+		"on-click-right": "nm-connection-editor"
 	},
 	"pulseaudio": {
-		"format": "{volume}% {icon} {format_source}",
-		"format-bluetooth": "{volume}%  {format_source}",
-		"format-bluetooth-muted": "   {format_source}",
-		"format-muted": " {format_source}",
+		"format": "{icon} {volume}",
+		"format-bluetooth": "{volume}% {icon} ",
+		"format-bluetooth-muted": " ",
+		"format-muted": " ",
 		"format-source": "",
 		"format-source-muted": "",
 		"format-icons": {
 			"headphone": "",
-			"hands-free": "",
-			"headset": "",
+			"headset": "",
 			"phone": "",
 			"portable": "",
 			"car": "",
@@ -153,50 +146,43 @@
 				"",
 				"",
 				""
-			],
+			]
 		},
 		"on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-		"on-click-right": "pavucontrol",
-		"middle-click": "pavucontrol",
+		"on-click-right": "pavucontrol"
 	},
-	"custom/media": {
-		"format": "{icon} {}",
-		"return-type": "json",
-		"max-length": 40,
-		"format-icons": {
-			"spotify": " ",
-			"default": "🎜 ",
-		},
-		"escape": true,
-	},
+   "custom/pacman-update-icon": {
+      "format": " 󰏔 "
+   },
+   "custom/pacman-update": {
+      "format": " {}",
+      "interval": 3600,
+      "exec": "$HOME/.config/waybar/.scripts/checkupdates | wc -l",
+      "signal": 8
+   },
 	"custom/spotify": {
-    "exec": "~/.config/waybar/custom/mediaplayer.py --player spotify",
-    "format": "{}  ",
-    "return-type": "json",
-    "on-click": "playerctl play-pause",
-    "on-scroll-up": "playerctl next",
-    "on-scroll-down": "playerctl previous"
+      "exec": "~/.config/waybar/.scripts/mediaplayer.py --player spotify",
+      "format": "{}  ",
+      "return-type": "json",
+      "on-click": "playerctl -p spotify play-pause",
+      "on-scroll-up": "playerctl -p spotify next",
+      "on-scroll-down": "playerctl -p spotify previous"
 	},
-	"cava": {
-        "cava_config": "~/.config/cava/config",
-        "framerate": 30,
-        "autosens": 1,
-        "sensitivity": 100,
-        "bars": 14,
-        "lower_cutoff_freq": 50,
-        "higher_cutoff_freq": 10000,
-        "method": "pulse",
-        "source": "auto",
-        "stereo": true,
-        "reverse": false,
-        "bar_delimiter": 0,
-        "monstercat": false,
-        "waves": false,
-        "noise_reduction": 0.77,
-        "input_delay": 2,
-        "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
-        "actions": {
-                   "on-click-right": "mode"
-                   }
-    },
+   "custom/musicw": {
+      "format": "{icon}{}",
+      "format-icons": {
+          "Playing": " ", // Uncomment if not using caway
+          "Paused": " ",
+          "Stopped": " " // This stop symbol is RTL. So &#x202d; is left-to-right override.
+      },
+      "escape": true,
+      "tooltip": true,
+      "exec": "$HOME/.config/waybar/scripts/caway",
+      "return-type": "json",
+      "on-click": "playerctl play-pause",
+      "on-scroll-up": "playerctl previous",
+      "on-scroll-down": "playerctl next",
+      "on-click-right": "spotify-launcher",
+      "max-length": 25
+  }
 }
