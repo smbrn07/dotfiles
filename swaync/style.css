@@ -129,11 +129,11 @@
   border-bottom-left-radius: 10px;
 }
 
-/*.notification-action:last-child {
+.notification-action:last-child {
   border-bottom-right-radius: 10px;
   border-right: 1px solid @noti-border-color;
 }
-*/
+
 
 .image {
 }
@@ -141,7 +141,7 @@
 .body-image {
   margin-top: 6px;
   background-color: transparent;
-/*  border-radius: 12px;*/
+  border-radius: 12px;
 }
 
 .summary {
