@@ -7,12 +7,6 @@
 1. Arch Linux Base Install
 2. yay
 
-# Pacman
-
-```
-sudo pacman -Syu tmux neovim neofetch swaync waybar xdg-user-dirs grim slurp wl-clipboard wtype pavucontrol jq qt5-wayland qt6-wayland qt5ct qt6ct rofimoji
-```
-
 # NVIDIA users only
 ## Step 1: Installing required packages and enabling multilib
 
@@ -96,6 +90,12 @@ Setting the kernel parameter depends on what bootloader you are using. Complete 
    - The edited line should look something like this: **Target=nvidia**
 6. Move the file to **/etc/pacman.d/hooks/** with: `sudo mkdir -p /etc/pacman.d/hooks/ && sudo mv ./nvidia.hook /etc/pacman.d/hooks/`
 
+# Pacman
+
+```
+sudo pacman -Syu neovim neofetch swaync waybar wl-clipboard wtype pavucontrol jq qt5-wayland qt6-wayland qt5ct qt6ct rofimoji adw-gtk-theme
+```
+
 ## Yay
 
 ```
@@ -106,5 +106,5 @@ makepkg -si
 ```
 
 ```
-yay -S grimblast nwg-look rofi-wayland apple_cursor cliphist wlogout
+yay -S nwg-look rofi-wayland apple_cursor cliphist wlogout
 ```
