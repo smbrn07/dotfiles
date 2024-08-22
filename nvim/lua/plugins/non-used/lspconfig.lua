@@ -1,4 +1,22 @@
 return {
+   {
+      "williamboman/mason.nvim",
+      config = function()
+         require("mason").setup()
+      end,
+   },
+   {
+      "williamboman/mason-lspconfig",
+      config = function()
+         require("mason-lspconfig").setup({
+            ensure_installed = {
+               "clangd",
+               "lua_ls",
+            }
+         })
+      end,
+   },
+   {
    "neovim/nvim-lspconfig",
    event = {"BufReadPre", "BufNewFile"},
    dependencies = {
@@ -86,13 +104,90 @@ return {
             })
          end,
          ["clangd"] = function()
-            -- configure lua server (with special settings)
+            -- enabled = false,
             lspconfig["clangd"].setup({
-               -- capabilities = capabilities,
-               -- cmd = { "clangd" },
+               keys = {
+                  { "<leader>o", "<cmd>ClangdSwitchSourceHeader<cr>", desc = "Switch Source/Header (C/C++)" },
+               },
+               single_file_support = true,
+               capabilities = {
+                  -- offsetEncoding = { "utf-16" },
+               },
+               cmd = {
+                  "clangd",
+               },
+            })
+         end,
+         ["lua_ls"] = function()
+            -- enabled = false,
+            lspconfig["lua_ls"].setup({
+               single_file_support = true,
+               settings = {
+                  Lua = {
+                     workspace = {
+                        checkThirdParty = false,
+                     },
+                     completion = {
+                        workspaceWord = true,
+                        callSnippet = "Both",
+                     },
+                     misc = {
+                        parameters = {
+                           -- "--log-level=trace",
+                        },
+                     },
+                     hint = {
+                        enable = true,
+                        setType = false,
+                        paramType = true,
+                        paramName = "Disable",
+                        semicolon = "Disable",
+                        arrayIndex = "Disable",
+                     },
+                     doc = {
+                        privateName = { "^_" },
+                     },
+                     type = {
+                        castNumberToInteger = true,
+                     },
+                     diagnostic = {
+                        disable = { "incomplete-signature-doc", "trailing-space" },
+                        -- enable = false,
+                        groupSeverity = {
+                           strong = "Warning",
+                           strict = "Warning",
+                        },
+                        groupFileStatus = {
+                           ["ambiguity"] = "Opened",
+									["await"] = "Opened",
+									["codestyle"] = "None",
+									["duplicate"] = "Opened",
+									["global"] = "Opened",
+									["luadoc"] = "Opened",
+									["redefined"] = "Opened",
+									["strict"] = "Opened",
+									["strong"] = "Opened",
+									["type-check"] = "Opened",
+									["unbalanced"] = "Opened",
+									["unused"] = "Opened",
+                        },
+                        unusedLocalExclude = { "_*" },
+                     },
+                     format = {
+                        enable = false,
+                        defaultConfig = {
+                           indent_style = "space",
+                           indent_size = "3",
+                           continuation_indent_size = "3",
+                        },
+                     },
+                  },
+               },
+               setup = {},
             })
          end,
       })
    end,
+   },
 }
 

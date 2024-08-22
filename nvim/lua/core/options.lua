@@ -1,8 +1,17 @@
-vim.cmd("let g:netrw_liststyle = 3")
+-- vim.cmd("let g:netrw_liststyle = 3")
 local opt = vim.opt
 
-opt.relativenumber = false
+-- nerd fonts
+vim.g.have_nerd_font = true
+
 opt.number = true
+-- opt.relativenumber = true
+
+-- Enable mouse mode, can bew useful for resizing splits for example!
+opt.mouse = 'a'
+
+-- Don't show the mode, since it's already in the status line
+opt.showmode = false
 
 -- tabs & indentation
 opt.tabstop = 3 -- 3 spaces for tabs (prettier default)
@@ -11,8 +20,6 @@ opt.expandtab = true -- expand tab to spaces
 opt.autoindent = true -- copy indent from current line when starting new one
 
 opt.wrap = false
-
--- nerdfont
 
 -- search settings
 opt.ignorecase = true -- ignore case when searching
