@@ -1,32 +1,22 @@
 set -g fish_greeting
 
-# theme
-set -g fish_prompt_pwd_dir_length 1
-set -g theme_display_user yes
-set -g theme_hide_hostname no
-set -g theme_hostname always
+# Starship
+starship init fish | source
+
+# config
+set -gx TERM xterm-kitty
+set -gx EDITOR nvim
+fish_config theme choose tokyonight_night
 
 # aliases
 alias ls "ls -p -G"
 alias la "ls -A"
 alias ll "ls -l"
 alias lla "ll -A"
+alias icat "kitten icat"
 alias g git
 command -qv nvim && alias vim nvim
-
-set -gx EDITOR nvim
-
-set -gx PATH bin $PATH
-set -gx PATH ~/bin $PATH
-set -gx PATH ~/.local/bin $PATH
-
-# Go
-set -g GOPATH $HOME/go
-set -gx PATH $GOPATH/bin $PATH
-
-source (dirname (status --current-filename))/config-linux.fish
-
-set LOCAL_CONFIG (dirname (status --current-filename))/config-local.fish
-if test -f $LOCAL_CONFIG
-    source $LOCAL_CONFIG
+if type -q eza
+    alias ll "eza -l -g --icons"
+    alias lla "ll -a"
 end

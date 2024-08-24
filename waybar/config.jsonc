@@ -5,12 +5,13 @@
 	"margin-left": 5,
 	"margin-right": 5,
 	"modules-left": [
+      "custom/space",
 		"hyprland/workspaces",
 		"hyprland/window"
 	],
 	"modules-center": [
 		"custom/spotify",
-		"custom/recorder"
+		"custom/recorder",
 	],
 	"modules-right": [
 		"cpu",
@@ -25,14 +26,14 @@
 		"custom/sep",
 		"tray",
 		"custom/sep",
-		"custom/session"
+		"custom/session",
 	],
 	"custom/sep": {
 		"format": "|",
       "tooltip": false
 	},
 	"custom/space": {
-		"format": "     "
+		"format": "  "
 	},
 	"hyprland/window": {
 		"format": "  {}",
@@ -71,9 +72,9 @@
 		"escape": true
 	},
 	"custom/session": {
-		"format": "{icon}  ",
+		"format": "{icon}",
 		"format-icons": {
-			"default": "💀"
+			"default": "💀  "
 		},
 		"toolip": false,
 		"on-click": "wlogout -p layer-shell"
@@ -167,22 +168,5 @@
       "on-click": "playerctl -p spotify play-pause",
       "on-scroll-up": "playerctl -p spotify next",
       "on-scroll-down": "playerctl -p spotify previous"
-	},
-   "custom/musicw": {
-      "format": "{icon}{}",
-      "format-icons": {
-          "Playing": " ", // Uncomment if not using caway
-          "Paused": " ",
-          "Stopped": " " // This stop symbol is RTL. So &#x202d; is left-to-right override.
-      },
-      "escape": true,
-      "tooltip": true,
-      "exec": "$HOME/.config/waybar/scripts/caway",
-      "return-type": "json",
-      "on-click": "playerctl play-pause",
-      "on-scroll-up": "playerctl previous",
-      "on-scroll-down": "playerctl next",
-      "on-click-right": "spotify-launcher",
-      "max-length": 25
-  }
+	}
 }
