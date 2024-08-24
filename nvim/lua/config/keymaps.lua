@@ -6,7 +6,6 @@ local keymap = vim.keymap
 
 -- Do things without affecting the registers
 keymap.set("n", "x", '"_x')
-keymap.set("n", "p", '"0p')
 keymap.set("v", "p", '"0p')
 keymap.set("n", "c", '"_c')
 keymap.set("v", "c", '"_c')
@@ -15,8 +14,10 @@ keymap.set("n", "d", '"_d')
 -- Delete a word backwards
 keymap.set("n", "dw", 'vb"_d')
 
--- Select all
+-- Select all / move line
 keymap.set("n", "<C-a>", "gg<S-v>G")
+keymap.set("n", "<C-j>", "<Cmd>m +1<CR>")
+keymap.set("n", "<C-k>", "<Cmd>m -2<CR>")
 
 -- exit with jk
 keymap.set("i", "jk", "<Esc>")

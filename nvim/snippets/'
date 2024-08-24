@@ -1,0 +1,63 @@
+{
+  "tempcpp": {
+    "prefix": "tempcpp",
+    "body": [
+      "#include \"bits/stdc++.h\"",
+      "",
+      "using namespace std;",
+      "",
+      "typedef long long ll;",
+      "",
+      "#define endl '\\n'",
+      "#define ff first",
+      "#define ss second",
+      "#define pb push_back",
+      "#define sz(a) int(a.size())",
+      "#define allin(a) begin(a), end(a)",
+      "",
+      "const int mod = 1e9+7;",
+      "const int nmax = 1e5+7;",
+      "",
+      "signed main() {",
+      "   cin.tie(nullptr)->sync_with_stdio(false);   ",
+      "   ",
+      "   return 0;",
+      "}"
+    ],
+    "description": "tempcpp"
+  },
+  "fulltempcpp": {
+    "prefix": "fulltempcpp",
+    "body": [
+      "#include \"bits/stdc++.h\"",
+      "using namespace std;",
+      "",
+      "typedef long long ll;",
+      "",
+      "#define pii pair<int, int>",
+      "#define pll pair<long long, long long>",
+      "#define vi vector<int>",
+      "#define mii map<int, int>",
+      "#define si set<int>",
+      "#define sc set<char>",
+      "",
+      "#define FORl(i,s,e) for(int i=s;i<e;i++)",
+      "#define FOR(i,s,e) for(int i=s;i<=e;i++)",
+      "#define pb push_back",
+      "#define allin(v) v.begin(), v.end()",
+      "",
+      "#define mod 19e+7",
+      "#define PI 3.1415926535897932384626433832795",
+      "",
+      "signed main() {",
+      "   #ifndef ONLINE_JUDGE",
+      "   freopen(\"input.txt\",\"r\",stdin);",
+      "   freopen(\"output.txt\",\"w\",stdout);",
+      "   #endif",
+      "",
+      "   return 0;",
+      "}"
+    ],
+    "description": "fulltempcpp"
+  }
+}

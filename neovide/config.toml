@@ -2,9 +2,9 @@ fork = false
 frame = "full"
 idle = true
 maximized = false
-neovim-bin = "/usr/bin/nvim" # in reality found dynamically on $PATH if unset
+#neovim-bin = "/usr/bin/nvim" # in reality found dynamically on $PATH if unset
 no-multigrid = false
-srgb = false
+#srgb = false
 tabs = true
 theme = "auto"
 title-hidden = true
@@ -12,14 +12,12 @@ vsync = true
 wsl = false
 
 [font]
-# normal = [] # Will use the bundled Fira Code Nerd Font by default
-size = 13.0
+size = 14
+edging = "antialias"
 
 [[font.normal]]
-family = "Liga SFMono Nerd Font"
-
-[[font.normal]]
-family = "FiraCode Nerd Font"
+family = "LigaSFMono Nerd Font"
 
 [[font.italic]]
-family = "Operator Mono SSm Lig"
+family = "OperatorMonoSSmLig Nerd Font"
+style = "Italic"
