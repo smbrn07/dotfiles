@@ -93,7 +93,7 @@ Setting the kernel parameter depends on what bootloader you are using. Complete 
 # Pacman
 
 ```
-sudo pacman -Syu neovim neofetch swaync waybar wl-clipboard wtype pavucontrol jq qt5-wayland qt6-wayland qt5ct qt6ct rofimoji adw-gtk-theme
+sudo pacman -Syu neovim neofetch swaync waybar wl-clipboard wtype pavucontrol jq rofimoji adw-gtk-theme cliphist python-gobject spotify-launcher clang libnotify exa $(pacman -Ssq noto-fonts) fzf wget
 ```
 
 ## Yay
@@ -106,5 +106,5 @@ makepkg -si
 ```
 
 ```
-yay -S nwg-look rofi-wayland apple_cursor cliphist wlogout
+yay -S nwg-look rofi-wayland apple_cursor wlogout
 ```
