@@ -26,6 +26,7 @@ vim.g.bigfile_size = 1024 * 1024 * 1.5 -- 1.5 MB
 local opt = vim.opt
 
 opt.listchars = {
+  tab = "  ",
   trail = " ",
 }
 

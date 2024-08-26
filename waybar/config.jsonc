@@ -5,22 +5,21 @@
 	"margin-left": 5,
 	"margin-right": 5,
 	"modules-left": [
-      "custom/space",
+    "custom/space",
 		"hyprland/workspaces",
 		"hyprland/window"
 	],
 	"modules-center": [
-		"custom/spotify",
-		"custom/recorder",
 	],
 	"modules-right": [
+		"custom/spotify",
 		"cpu",
 		"custom/sep",
 		"memory",
 		"custom/sep",
 		"pulseaudio",
-      "custom/sep",
-      "network",
+    "custom/sep",
+    "network",
 		"custom/sep",
 		"clock",
 		"custom/sep",
@@ -36,27 +35,11 @@
 		"format": "  "
 	},
 	"hyprland/window": {
-		"format": "  {}",
-		"max-length": 50,
+		"format": " {}",
+		"max-length": 75,
 		"separate-outputs": true
 	},
-	"idle_inhibitor": {
-		"format": "{icon}",
-		"format-icons": {
-			"activated": " ",
-			"deactivated": " "
-		}
-	},
-	"custom/recorder": {
-		"format": "⭕",
-		"return-type": "json",
-		"interval": 1,
-		"exec": "echo '{\"class\": \"recording\"}'",
-		"exec-if": "pgrep wf-recorder",
-		"tooltip": false,
-		"on-click": "killall -s SIGINT wf-recorder"
-	},
-	"custom/notification": {
+		"custom/notification": {
 		"tooltip": true,
 		"format": " {icon} ",
 		"format-icons": {
@@ -77,7 +60,7 @@
 			"default": "💀  "
 		},
 		"toolip": false,
-		"on-click": "wlogout -p layer-shell"
+		"on-click": "wlogout -b 6"
 	},
 	"hyprland/workspaces": {
 		"disable-scroll": true,
@@ -115,12 +98,6 @@
       "format": " {used:0.1f}G",
       "tooltip": false
 	},
-	"custom/power_profile": {
-		"exec": "sleep 0.3 && /home/adharsh/.scripts/powerprofilecycle.sh -m",
-		"interval": 1,
-		"on-click": "/home/adharsh/.scripts/powerprofilecycle.sh",
-		"exec-on-event": true
-	},
 	"network": {
 		"format-wifi": "  {essid}",
 		"format-ethernet": "󰈀 wired",
@@ -152,18 +129,9 @@
 		"on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
 		"on-click-right": "pavucontrol"
 	},
-   "custom/pacman-update-icon": {
-      "format": " 󰏔 "
-   },
-   "custom/pacman-update": {
-      "format": " {}",
-      "interval": 3600,
-      "exec": "$HOME/.config/waybar/.scripts/checkupdates | wc -l",
-      "signal": 8
-   },
-	"custom/spotify": {
+  "custom/spotify": {
       "exec": "~/.config/waybar/.scripts/mediaplayer.py --player spotify",
-      "format": "{}  ",
+      "format": "{}",
       "return-type": "json",
       "on-click": "playerctl -p spotify play-pause",
       "on-scroll-up": "playerctl -p spotify next",

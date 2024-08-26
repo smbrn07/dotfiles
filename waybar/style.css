@@ -1,8 +1,8 @@
 * {
 	border: none;
 	font-family:
-		Liga SF Mono Nerd Font,
-      FontAwesome;
+		FiraCode Nerd Font,
+    FontAwesome;
 	font-size: 15px;
 	border-radius: 8px;
 }
@@ -78,7 +78,6 @@ tooltip {
 
 #window {
 	color: #cdd6f4;
-	font-family: Liga SFMono Nerd Font;
 	font-size: 10;
 }
 
@@ -91,7 +90,6 @@ tooltip {
 	margin: 2px 0 0 0;
 	padding: 2px;
 	border-radius: 8px;
-	font-family: Liga SFMono Nerd Font;
 	color: #CAD3F5;
 }
 
@@ -111,9 +109,6 @@ tooltip {
 #mode,
 #custom-power,
 #custom-menu,
-#idle_inhibitor {
-	padding: 0 5px;
-}
 
 #mode {
 	color: #cc3436;
@@ -140,7 +135,7 @@ tooltip {
 #custom-spotify {
     padding: 0 10px;
     margin: 0 4px;
-    background-color: #ffd866;
-    color: black;
-    border-radius: 8px;
+    /* background-color: #ffd866; */
+    color: #CAD3F5;
+    /* border-radius: 8px; */
 }
