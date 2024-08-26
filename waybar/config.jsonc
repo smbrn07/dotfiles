@@ -12,7 +12,7 @@
 	"modules-center": [
 	],
 	"modules-right": [
-		"custom/spotify",
+		"mpris",
 		"cpu",
 		"custom/sep",
 		"memory",
@@ -36,7 +36,7 @@
 	},
 	"hyprland/window": {
 		"format": " {}",
-		"max-length": 75,
+		"max-length": 40,
 		"separate-outputs": true
 	},
 		"custom/notification": {
@@ -129,12 +129,17 @@
 		"on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
 		"on-click-right": "pavucontrol"
 	},
-  "custom/spotify": {
-      "exec": "~/.config/waybar/.scripts/mediaplayer.py --player spotify",
-      "format": "{}",
-      "return-type": "json",
-      "on-click": "playerctl -p spotify play-pause",
-      "on-scroll-up": "playerctl -p spotify next",
-      "on-scroll-down": "playerctl -p spotify previous"
-	}
+  "mpris": {
+    "format": "{player_icon} {title} - {artist} ",
+	  "format-paused": "{status_icon} {title} - {artist} ",
+	  "player-icons": {
+		  "default": " ",
+		  // "mpv": "🎵"
+	  },
+	  "status-icons": {
+		  "paused": " "
+	  },
+    "tooltip": false,
+	  // "ignored-players": ["firefox", "youtube"],
+  }
 }

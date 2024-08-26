@@ -1,7 +1,7 @@
 * {
 	border: none;
 	font-family:
-		FiraCode Nerd Font,
+	  LigaSFMono Nerd Font,
     FontAwesome;
 	font-size: 15px;
 	border-radius: 8px;
@@ -93,6 +93,7 @@ tooltip {
 	color: #CAD3F5;
 }
 
+#mpris,
 #network,
 #pulseaudio,
 #cpu, 
@@ -103,6 +104,10 @@ tooltip {
 #custom-pacman-update {
    color: #8BD5CA;
    /* margin: 5px 10px 5px 0px; */
+}
+
+#mpris {
+  font-family: FiraCode Nerd Font;
 }
 
 #tray,
