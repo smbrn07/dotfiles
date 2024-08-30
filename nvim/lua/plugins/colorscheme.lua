@@ -3,25 +3,20 @@ return {
   {
     "folke/tokyonight.nvim",
     priority = 1000,
-    config = function()
-      local transparent = true
-
-      require("tokyonight").setup({
-        style = "night",
-        transparent = transparent,
-        styles = {
-          sidebars = transparent and "transparent" or "dark",
-          floats = transparent and "transparent" or "dark",
-        },
-      })
-    end,
+    opts = {
+      style = "storm",
+      transparent = true,
+      styles = {
+        sidebars = "transparent",
+        floats = "transparent",
+      },
+    },
   },
-
-  -- Configure LazyVim to load gruvbox
+  -- Configure LazyVim to load nord
   -- {
   --   "LazyVim/LazyVim",
   --   opts = {
-  --     colorscheme = "tokyonight",
+  --     colorscheme = "nord",
   --   },
   -- },
 }

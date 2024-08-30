@@ -30,6 +30,9 @@ opt.listchars = {
   trail = " ",
 }
 
+opt.shiftwidth = 3
+opt.tabstop = 3
+opt.swapfile = false
 opt.relativenumber = false -- Relative line numbers
 opt.termguicolors = true -- True color support
 opt.timeoutlen = vim.g.vscode and 1000 or 300 -- Lower than default (1000) to quickly trigger which-key

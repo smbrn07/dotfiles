@@ -1,23 +1,22 @@
-set -g fish_greeting
+set fish_greeting
+set EDITOR nvim
+set VISUAL zeditor
 
-# aws cli
-starship init fish | source
-zoxide init fish | source
+### SET MANPAGER
+set -x MANPAGER "nvim +Man!"
 
-# config
-set -gx TERM xterm-kitty
-set -gx EDITOR nvim
-fish_config theme choose tokyonight_night
+# rust
+source "$HOME/.cargo/env.fish"
 
-# fzf
-set -gx FZF_DEFAULT_OPTS "--color=bg+:-1,gutter:-1"
-fzf_configure_bindings --directory=\cf
-
-# aliases 
-alias ls eza
-alias la "ls -a --icons"
-alias ll "ls -l --icons"
-alias lla "ll -la --icons"
-alias lt "ls --tree"
+### aliases 
 alias icat "kitten icat"
-command -qv nvim && alias vim nvim
+alias ls "eza --icons"
+alias ll "ls -l"
+alias lla "ls -al"
+alias lt "eza -aT"
+alias yay paru
+
+# zoxide
+zoxide init fish | source
+# fzf
+fzf --fish | source

@@ -10,6 +10,7 @@ keymap.set("v", "p", '"0p')
 keymap.set("n", "c", '"_c')
 keymap.set("v", "c", '"_c')
 keymap.set("n", "d", '"_d')
+keymap.set("v", "d", '"_d')
 
 -- Delete a word backwards
 keymap.set("n", "dw", 'vb"_d')
@@ -20,7 +21,7 @@ keymap.set("n", "<C-j>", "<Cmd>m +1<CR>")
 keymap.set("n", "<C-k>", "<Cmd>m -2<CR>")
 
 -- exit with jk
-keymap.set("i", "jk", "<Esc>")
+-- keymap.set("i", "jk", "<Esc>")
 
 -- C++ build
 --
