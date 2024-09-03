@@ -1,5 +1,5 @@
 configuration {
-    terminal: "kitty";
+    terminal: "alacritty";
 
     modes: "combi,keys";
 
